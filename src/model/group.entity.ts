@@ -1,13 +1,8 @@
 // group.entity.ts
 
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  OneToMany,
-} from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 import { Diary } from './diary.entity';
-import { GroupMember } from './groupMember.entity';
+import { GroupMember } from './group_memger.entity';
 
 @Entity()
 export class Group {

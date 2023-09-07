@@ -1,21 +1,23 @@
 // diary.controller.ts
 
-import { Controller, Get, Param, Post, Body, Query } from "@nestjs/common";
-import { DiaryService } from "./diary.service";
-import { UserService } from "../service/user.service";
+import { Controller, Get, Param, Post, Body, Query } from '@nestjs/common';
+import { UserService } from '../service/user.service';
+import { DiaryService } from '../service/diary.service';
 
-@Controller("diaries")
+@Controller('diaries')
 export class DiaryController {
-  constructor(private readonly diaryService: DiaryService, private readonly userService: UserService) {
-  }
+  constructor(
+    private readonly diaryService: DiaryService,
+    private readonly userService: UserService,
+  ) {}
 
-  @Get("my")
-  getMyDiaries(@Query("userId") userId: number) {
+  @Get('my')
+  getMyDiaries(@Query('userId') userId: number) {
     return this.diaryService.getMyDiaries(userId);
   }
 
-  @Get("group/:groupId")
-  getGroupDiaries(@Param("groupId") groupId: number) {
+  @Get('group/:groupId')
+  getGroupDiaries(@Param('groupId') groupId: number) {
     return this.diaryService.getGroupDiaries(groupId);
   }
 

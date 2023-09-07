@@ -1,13 +1,8 @@
 // user.entity.ts
 
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  OneToMany
-} from "typeorm";
-import { Diary } from "./diary.entity";
-import { GroupMember } from "./groupMember.entity";
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { Diary } from './diary.entity';
+import { GroupMember } from './group_memger.entity';
 
 @Entity()
 export class User {
@@ -23,10 +18,10 @@ export class User {
   @Column()
   password: string;
 
-  @Column({ type: "varchar", nullable: true })
+  @Column({ type: 'varchar', nullable: true })
   gender: string;
 
-  @Column({ type: "int", nullable: true })
+  @Column({ type: 'int', nullable: true })
   age: number;
 
   @OneToMany(() => Diary, (diary) => diary.user)
